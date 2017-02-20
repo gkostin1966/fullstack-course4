@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>able-player</title>
 </head>
 <body>
@@ -13,17 +14,99 @@
     <script src="https://gkostin1966.github.io/fullstack-course4/ableplayer/thirdparty/js.cookie.js"></script>
     <!-- CSS -->
     <!--<link rel="stylesheet" href="https://gkostin1966.github.io/fullstack-course4/ableplayer/build/ableplayer.min.css" type="text/css"/>-->
-    <link rel="stylesheet" href="ableplayer.css" type="text/css"/>
+    <link rel="stylesheet" href="ableplayer.scss" type="text/x-scss"/>
+    <link rel="stylesheet" href="heliotrope.scss" type="text/x-scss"/>
     <!-- JavaScript -->
     <!--<script src="https://gkostin1966.github.io/fullstack-course4/ableplayer/build/ableplayer.min.js"></script>-->
     <script src="ableplayer.js"></script>
     <!-- Video -->
-    <video id="z890rt26b" data-able-player preload="auto" width="480" height="360">
-        <source type="video/webm" src="https://www.fulcrum.org/downloads/z890rt26b?file=webm"> <!-- data-desc-src="path_to_described_video.webm" -->
-        <source type="video/mp4" src="https://www.fulcrum.org/downloads/z890rt26b?file=mp4"> <!-- data-desc-src="path_to_described_video.webm"-->
-        <track kind="captions" label="English" srclang="en" src="https://www.fulcrum.org/downloads/z890rt26b?file=vtt">
-        Your browser does not support the video tag.
-    </video>
+    <!--<video id="video" data-able-player preload="auto" width="480" height="360">-->
+        <!--<source type="video/webm" src="https://www.fulcrum.org/downloads/z890rt26b?file=webm"> &lt;!&ndash; data-desc-src="path_to_described_video.webm" &ndash;&gt;-->
+        <!--<source type="video/mp4" src="https://www.fulcrum.org/downloads/z890rt26b?file=mp4"> &lt;!&ndash; data-desc-src="path_to_described_video.webm"&ndash;&gt;-->
+        <!--<track kind="captions" label="English" srclang="en" src="https://www.fulcrum.org/downloads/z890rt26b?file=vtt">-->
+        <!--Your browser does not support the video tag.-->
+    <!--</video>-->
+
+    <div>
+    <figure class="image" title="This short film shows the outside of the Kamerny Theatre, Tairov and the Stenberg Brothers (smoking), and several scene excerpts from The Hairy Ape, including the Fifth-Avenue fox-trotters, Yank's attempt to break the bars that enclose him, and the stokehole pantomime for which the production was so famous.">
+        <div class="able-wrapper">
+            <div class="able">
+                <h1 class="able-offscreen">Media player</h1>
+                <div class="able-vidcap-container">
+                    <div class="able-media-container">
+                        <button class="able-big-play-button icon-play" aria-hidden="true" tabindex="-1" style="width: 441px; height: 336px; display: block;"></button>
+                        <video id="video" preload="auto" data-able-player="" tabindex="-1" class="no-download" style="width: 100%; height: auto;">
+                            <source src="https://www.fulcrum.org/downloads/z890rt26b?file=webm" type="video/webm">
+                            <source src="https://www.fulcrum.org/downloads/z890rt26b?file=mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+                <div class="able-player able-video" role="region" aria-label="video player">
+                    <div class="able-now-playing" aria-live="assertive" aria-atomic="true"></div>
+                    <div class="able-controller able-white-controls">
+                        <div id="video-tooltip" class="able-tooltip" style="left: 0px; top: -43px; display: none;"></div>
+                        <div class="able-left-controls">
+                            <button type="button" tabindex="0" aria-label="Play" class="able-button-handler-play"><span class="icon-play" aria-hidden="true"></span><span class="able-clipped">Play</span></button>
+                            <button type="button" tabindex="0" aria-label="Restart" class="able-button-handler-restart"><span class="icon-restart" aria-hidden="true"></span><span class="able-clipped">Restart</span></button>
+                            <button type="button" tabindex="0" aria-label="Rewind" class="able-button-handler-rewind"><span class="icon-rewind" aria-hidden="true"></span><span class="able-clipped">Rewind</span></button>
+                            <button type="button" tabindex="0" aria-label="Forward" class="able-button-handler-forward"><span class="icon-forward" aria-hidden="true"></span><span class="able-clipped">Forward</span></button>
+                        </div>
+                        <div class="able-right-controls">
+                            <div class="able-seekbar-wrapper" style="width: 281px;">
+                                <div class="able-seekbar">
+                                    <div role="tooltip" class="able-tooltip" style="display: none; left: 114.156px; bottom: 19px;">0:33</div>
+                                    <div class="able-seekbar-loaded" style="width: 267px;"></div>
+                                    <div class="able-seekbar-played" style="width: 38.4077px;"></div>
+                                    <div orientation="horizontal" class="able-seekbar-head" tabindex="0" role="slider" aria-label="video timeline" aria-valuemin="0" aria-valuemax="89.134" aria-valuetext="12 seconds" aria-valuenow="12" style="left: 33.9077px;"></div>
+                                </div>
+                                <span class="able-offscreen" aria-live="polite">0 seconds</span>
+                            </div>
+                            <button type="button" tabindex="0" aria-label="Volume" class="able-button-handler-volume" aria-controls="video-volume-slider" aria-describedby="video-volume-help"><span class="icon-volume-medium" aria-hidden="true"></span><span class="able-clipped">Volume</span></button>
+                            <div id="video-volume-slider" class="able-volume-slider" aria-hidden="true">
+                                <div class="able-tooltip" role="tooltip"></div>
+                                <div class="able-volume-track">
+                                    <div class="able-volume-track able-volume-track-on" style="height: 35px; top: 15px;"></div>
+                                    <div class="able-volume-head" role="slider" aria-orientation="vertical" aria-label="Volume up down" aria-valuemin="0" aria-valuemax="10" aria-valuenow="7" tabindex="-1" aria-valuetext="70%" style="top: 8px;"></div>
+                                </div>
+                                <div class="able-offscreen" aria-live="assertive" aria-atomic="true">70%</div>
+                                <div id="video-volume-help" class="able-volume-help">70%, Click to access volume slider</div>
+                            </div>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div class="able-left-controls">
+                            <button type="button" tabindex="0" aria-label="Slower" class="able-button-handler-slower"><span class="icon-slower" aria-hidden="true"></span><span class="able-clipped">Slower</span></button>
+                            <button type="button" tabindex="0" aria-label="Faster" class="able-button-handler-faster"><span class="icon-faster" aria-hidden="true"></span><span class="able-clipped">Faster</span></button>
+                        </div>
+                        <div class="able-right-controls">
+                            <button type="button" tabindex="0" aria-label="Preferences" class="able-button-handler-preferences" aria-controls="video-prefs-menu"><span class="icon-preferences" aria-hidden="true"></span><span class="able-clipped">Preferences</span></button>
+                            <button type="button" tabindex="0" aria-label="Enter full screen" class="able-button-handler-fullscreen"><span class="icon-fullscreen icon-fullscreen-expand" aria-hidden="true"></span><span class="able-clipped">Enter full screen</span></button>
+                        </div>
+                        <div style="clear:both;"></div>
+                        <div id="video-prefs-menu" class="able-popup able-popup-no-radio">
+                            <ul>
+                                <li><input type="radio" value="captions" name="video-prefs-choice" id="video-prefs-0"><label for="video-prefs-0">Captions</label></li>
+                                <li><input type="radio" value="descriptions" name="video-prefs-choice" id="video-prefs-1"><label for="video-prefs-1">Descriptions</label></li>
+                                <li><input type="radio" value="keyboard" name="video-prefs-choice" id="video-prefs-2"><label for="video-prefs-2">Keyboard</label></li>
+                                <li><input type="radio" value="transcript" name="video-prefs-choice" id="video-prefs-3"><label for="video-prefs-3">Transcript</label></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="able-status-bar"><span class="able-timer"><span class="able-elapsedTime">0:12</span><span class="able-duration"> / 1:29</span></span><span class="able-speed" aria-live="assertive">Speed: 1x</span><span class="able-status" aria-live="polite">Paused</span></div>
+                </div>
+                <div class="able-descriptions" aria-live="assertive" aria-atomic="true" style="display: none; font-family: sans-serif; font-size: 100%; color: white; background-color: black; opacity: 1;"></div>
+                <div role="alert" class="able-alert" style="top: 222px;"></div>
+                <div role="alert" class="able-screenreader-alert"></div>
+            </div>
+        </div>
+
+        <figcaption>
+            <ul class="tabular list-unstyled">
+                <li class="attribute caption">Filmed scenes from <em>The Hairy Ape</em>, by Eugene O’Neill, directed by Alexander Tairov and L. L. Lukianov, Moscow Kamerny Theatre (premiere: January 24, 1926). НВ 3826/2. Copyright © A. A. Bakhrushin State Central Theatre Museum, Moscow.</li>
+            </ul>
+        </figcaption>
+    </figure>
+    </div>
 </div>
 </body>
 </html>
