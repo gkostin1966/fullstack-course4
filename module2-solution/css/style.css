@@ -162,6 +162,7 @@ section {
   background-color: lightgrey;
 }
 section > h1 {
+  width: 33%;
   float: right;
   padding: 5px;
   border: 1px solid black;
