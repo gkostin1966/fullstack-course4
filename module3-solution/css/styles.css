@@ -1,0 +1,55 @@
+body {
+    font-size: 16px;
+    font-family: 'Oxygen', sans-serif;
+}
+
+/** HEADER **/
+#header-nav {
+    border-radius: 0;
+    border: 0;
+    margin-bottom: 0;
+}
+#nav-list {
+    visibility: hidden;
+}
+/* END HEADER */
+
+/** CONTENT **/
+section {
+    height: 1000px;
+    background-color: yellow;
+}
+section div {
+    background-color: white;
+}
+section div h3 {
+    padding-top: 10px;
+}
+section div p {
+    padding: 10px;
+}
+/* END CONTENT **/
+
+/** FOOTER **/
+/* END FOOTER */
+
+/** Large devices only **/
+@media (min-width: 1200px) {
+}
+/** Medium devices only **/
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+/** Small devices only **/
+@media (min-width: 768px) and (max-width: 991px) {
+}
+/** Extra small devices only **/
+@media (max-width: 767px) {
+    #nav-list {
+        visibility: visible;
+    }
+    .navbar-default .navbar-nav>li {
+        border-width: 0px 0px 1px 0px;
+        border-style: solid;
+        border-color: lightgrey;
+    }
+}
